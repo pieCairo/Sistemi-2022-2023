@@ -1,0 +1,3 @@
+C:/Users/p.cairo.2224/Documents/GitHub/Sistemi-2022-2023/Laboratorio/Esercizi Laboratorio/Es1-ProvaPuntatori/cmake-build-debug/CMakeFiles/Esercizi_Laboratorio.dir
+C:/Users/p.cairo.2224/Documents/GitHub/Sistemi-2022-2023/Laboratorio/Esercizi Laboratorio/Es1-ProvaPuntatori/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/p.cairo.2224/Documents/GitHub/Sistemi-2022-2023/Laboratorio/Esercizi Laboratorio/Es1-ProvaPuntatori/cmake-build-debug/CMakeFiles/rebuild_cache.dir

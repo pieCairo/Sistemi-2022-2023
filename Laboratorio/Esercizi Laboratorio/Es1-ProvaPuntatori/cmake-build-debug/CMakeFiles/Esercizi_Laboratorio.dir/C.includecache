@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/p.cairo.2224/Documents/GitHub/Sistemi-2022-2023/Laboratorio/Esercizi Laboratorio/Es1-ProvaPuntatori/main.c
+stdio.h
+-
+
