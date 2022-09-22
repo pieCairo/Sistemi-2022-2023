@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/p.cairo.2224/Documents/GitHub/Sistemi-2022-2023/Laboratorio/Esercizi Laboratorio/Es4-DuplicazioneStringhe Con Puntatori/main.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+
