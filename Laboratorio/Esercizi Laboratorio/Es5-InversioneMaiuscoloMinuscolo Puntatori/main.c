@@ -12,17 +12,17 @@ int main() {
 
     char *p1 = str;
 
-    for(int i = 0; str[i] != '\0'; i++)
+    for(int i = 0; *p1 != '\0'; i++)
     {
-        if(p1 > 96)
-            *(p1-=32);
+        if(*p1 > 'a' && *p1 <= 'z')
+            *p1-=32;
         else
-            *(p1+=32);
+            *p1+=32;
 
-        *p1++;
+        p1++;
     }
 
-    printf("La stringa modificata \212: ");
+    printf("\nLa stringa \212: ");
     puts(str);
 
     return 0;
