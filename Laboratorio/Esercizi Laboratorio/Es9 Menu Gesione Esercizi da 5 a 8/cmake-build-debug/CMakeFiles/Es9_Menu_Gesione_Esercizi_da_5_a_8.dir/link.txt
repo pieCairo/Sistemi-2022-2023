@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2021.1.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\Es9_Menu_Gesione_Esercizi_da_5_a_8.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\Es9_Menu_Gesione_Esercizi_da_5_a_8.dir/objects.a @CMakeFiles\Es9_Menu_Gesione_Esercizi_da_5_a_8.dir\objects1.rsp
+C:\MinGW\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\Es9_Menu_Gesione_Esercizi_da_5_a_8.dir/objects.a -Wl,--no-whole-archive -o Es9_Menu_Gesione_Esercizi_da_5_a_8.exe -Wl,--out-implib,libEs9_Menu_Gesione_Esercizi_da_5_a_8.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Es9_Menu_Gesione_Esercizi_da_5_a_8.dir\linklibs.rsp

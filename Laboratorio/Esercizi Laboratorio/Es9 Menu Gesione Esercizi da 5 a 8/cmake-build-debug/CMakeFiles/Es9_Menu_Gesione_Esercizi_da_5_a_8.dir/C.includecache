@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/p.cairo.2224/Documents/GitHub/Sistemi_2022-2023/Laboratorio/Esercizi Laboratorio/Es9 Menu Gesione Esercizi da 5 a 8/main.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+time.h
+-
+
