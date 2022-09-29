@@ -33,6 +33,8 @@ void ordinaVet(int *v, int n);
 
 int main() {
     int scelta = 0;
+    int key = 0;
+    char key2 = 0;
 
     int n = 0;
     int v[MAX];
@@ -88,6 +90,13 @@ int main() {
                 stampaVet(v, n);
                 break;
             case 5:
+                do
+                {
+                    printf("Inserisci la chiave: ");
+                    scanf("%d", &key);
+                }
+                while(key > 26 && key < -26);
+
                 break;
             case 6:
                 break;
