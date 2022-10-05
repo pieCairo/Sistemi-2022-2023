@@ -13,7 +13,7 @@ int menu()
     printf("Esercizio 2: Inversione stringa con Puntatori\n");
     printf("Esercizio 3: Concatenazione di due stringhe con Puntatori\n");
     printf("Esercizio 4: Ordinamento numeri in un vettore con Puntatori\n");
-    printf("Esercizio 5: Cifratura a chiave");
+    printf("Esercizio 5: Cifratura a chiave\n");
     printf("Esercizio 6: Cifratura di Cesare");
     do {
         printf("Scelta -->");
@@ -24,12 +24,30 @@ int menu()
     return sc;
 }
 
+void toUpperCase(char s[])
+{
+    char *p;
+
+    for(p = s; *p != '\0'; p++)
+    {
+        if(*p >= 'a' && *p <= 'z')
+        {
+            *p -= 32;
+        }
+    }
+}
+
 void invertiMaiuscMinuscStringa(char *s);
 void invertiStringa(char str[]);
 void concatenaStringa(char str[], char str2[], char output[]);
 void caricaVet(int *v, int n);
 void stampaVet(int *v, int n);
 void ordinaVet(int *v, int n);
+void cifraSemplice(char s[], int key);
+void decifraSemplice(char s[], int key);
+void cifraCesare(char str2[], char key2);
+void decifraCesare(char str2[], char key2);
+
 
 int main() {
     int scelta = 0;
@@ -90,15 +108,34 @@ int main() {
                 stampaVet(v, n);
                 break;
             case 5:
-                do
-                {
-                    printf("Inserisci la chiave: ");
-                    scanf("%d", &key);
-                }
-                while(key > 26 && key < -26);
+                getchar();
+                printf("Inserisci la frase da cifrare --> ");
+                gets(str);
+                printf("Inserisci la chiave --> ");
+                scanf("%d", &key);
 
+                cifraSemplice(str, key);
+                printf("\nFrase cifrata --> ");
+                puts(str);
+                decifraSemplice(str, key);
+                printf("Frase Decifrata --> ");
+                puts(str);
                 break;
             case 6:
+                getchar();
+                printf("Inserisci la frase da cifrare --> ");
+                gets(str2);
+                do {
+                    printf("Inserisci la chiave (sotto forma di carattere) --> ");
+                    scanf("%c", &key2);
+                } while (key2 > 'a' && key2 < 'z' || key2 > 'A' && key2 < 'Z');
+
+                cifraCesare(str2, key);
+                printf("\nFrase cifrata --> ");
+                puts(str);
+                decifraCesare(str2, key2);
+                printf("Frase Decifrata --> ");
+                puts(str);
                 break;
         }
         getchar();
@@ -213,4 +250,58 @@ void ordinaVet(int *v, int n)
         }
     }
 
-};
+}
+
+
+void cifraSemplice(char s[], int key)
+{
+    char *p;
+    for(p = s; *p != '\0'; p++)
+        if(*p != ' ')
+            *p+=key;
+}
+void decifraSemplice(char s[], int key)
+{
+    char *p;
+    for(p = s; *p != '\0'; p++)
+        if(*p != ' ')
+            *p-=key;
+}
+
+
+
+void cifraCesare(char s[], char key)
+{
+    toUpperCase(s);
+    char *p;
+
+    if(key > 'Z')
+        key-=32;
+    key-='A';
+
+    for(p = s; *p != '\0'; s++)
+    {
+        if(*p >= 'A' && *p <= 'Z') {
+            *p += key;
+
+            if(*p > 'Z') {
+                *p -= 26;
+            }
+        }
+    }
+
+}
+void decifraCesare(char s[], char key) {
+    char *p;
+
+    for (p = s; *p != '\0'; s++)
+    {
+        if (*p >= 'A' && *p <= 'Z')
+        {
+            *p -= key;
+            if (*p > 'Z')
+                *p += 26;
+        }
+
+    }
+}
