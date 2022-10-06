@@ -14,12 +14,15 @@ int menu()
     printf("Esercizio 3: Concatenazione di due stringhe con Puntatori\n");
     printf("Esercizio 4: Ordinamento numeri in un vettore con Puntatori\n");
     printf("Esercizio 5: Cifratura a chiave\n");
-    printf("Esercizio 6: Cifratura di Cesare");
+    printf("Esercizio 6: Cifratura di Cesare\n");
+    printf("Esercizio 7: Data una stirnga visualizzare in output le ricorrenze\n");
+    printf("Esercizio 8: Date due stringhe verificare se sono l'anagramma l'una dell'altra\n");
+    printf("Esercizio 9: Date due stringhe verificare se sono Hertzianamente compatibili\n");
     do {
         printf("Scelta -->");
         scanf("%d", &sc);
     }
-    while(sc < 0 || sc > 6);
+    while(sc < 0 || sc > 10);
 
     return sc;
 }
@@ -47,6 +50,10 @@ void cifraSemplice(char s[], int key);
 void decifraSemplice(char s[], int key);
 void cifraCesare(char str2[], char key2);
 void decifraCesare(char str2[], char key2);
+
+void contaOccorrenze(char *s);
+void verificaAnagramma(char *s, char *s2);
+void verificaHertzianamente(char *s);
 
 
 int main() {
@@ -144,9 +151,26 @@ int main() {
                 printf("Frase Decifrata --> ");
                 puts(str);
                 break;
+            case 7:
+                getchar();
+                printf("Inserisci la frase da contare le ricorrenze --> ");
+                gets(str);
+                contaOccorrenze(str);
+                break;
+            case 8:
+                getchar();
+                printf("Inserisci la prima frase --> ");
+                gets(str);
+                printf("Inserisci la seconda frase --> ");
+                gets(str2);
+                verificaAnagramma(str, str2);
+                break;
+            case 9:
+                break;
         }
+        fflush(stdin);
         getchar();
-        fflush("stdin");
+        system("cls");
     }
     while(scelta != 0);
 
@@ -157,15 +181,12 @@ int main() {
 
 void invertiMaiuscMinuscStringa(char *s)
 {
-    while(*s != '\0')
-    {
+    for(; *s != '\0'; s++)
         if(*s >= 'a' && *s <= 'z')
             *s-=32;
         else if(*s >= 'A' && *s <= 'Z')
             *s+=32;
 
-        s++;
-    }
 }
 void invertiStringa(char str[])
 {
@@ -214,7 +235,6 @@ int concatenaStringa(char str[], char str2[], char output[])
 
     return controlla;
 }
-
 void caricaVet(int *v, int n)
 {
     srand(time(NULL));
@@ -250,24 +270,19 @@ void ordinaVet(int *v, int n)
 
 }
 
-
 void cifraSemplice(char s[], int key)
 {
     char *p;
     for(p = s; *p != '\0'; p++)
-        if(*p != ' ')
+        if(*p+key > 0 && *p+key < 255)
             *p+=key;
 }
 void decifraSemplice(char s[], int key)
 {
     char *p;
     for(p = s; *p != '\0'; p++)
-        if(*p != ' ')
             *p-=key;
 }
-
-
-
 void cifraCesare(char *s, char key)
 {
     int ausKey = key - 'A';
@@ -292,9 +307,48 @@ void decifraCesare(char *s, char key) {
         if (*s >= 'A' && *s <= 'Z')
         {
             *s -= ausKey;
-            if (*s > 'Z')
+            if (*s < 'A')
                 *s += 26;
         }
 
     }
+}
+
+void contaOccorrenze(char *s)
+{
+    int output[128];
+    int *p, i, j;
+
+    for(i = 0; i < 128; i++)
+        output[i] = 0;
+
+    for(p = output; *s != '\0'; s++)
+    {
+        *(p + *s) +=1;
+    }
+
+    for(j = 0, p = output; j < 128; j++, p++)
+        if(*p > 0)
+            printf("\nLa lettera %c compare %d volte: ", j, *p);
+}
+
+void verificaAnagramma(char *s, char *s2)
+{
+    int occ[128];
+    int occ2[128];
+    int *p, *p2, i, j;
+
+    for(i = 0; i < 128; i++)
+        output[i] = 0;
+
+    for(p = output; *s != '\0'; s++)
+    {
+        *(p + *s) +=1;
+    }
+
+}
+
+void verificaHertzianamente(char *s)
+{
+
 }
