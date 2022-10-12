@@ -4,6 +4,8 @@
 #include <time.h>
 
 #define MAX 50 + 1
+#define TRUE 1
+#define FALSE 0
 
 int menu()
 {
@@ -53,10 +55,10 @@ void decifraCesare(char str2[], char key2);
 
 void contaOccorrenze(char *s);
 void verificaAnagramma(char *s, char *s2);
-void verificaHertzianamente(char *s);
+void verificaHertzianamente(char *s, char *s2);
 
-
-int main() {
+int main()
+{
     int scelta = 0;
     int key = 0;
     char key2 = 0;
@@ -166,6 +168,12 @@ int main() {
                 verificaAnagramma(str, str2);
                 break;
             case 9:
+                getchar();
+                printf("Inserisci la prima frase --> ");
+                gets(str);
+                printf("Inserisci la seconda frase --> ");
+                gets(str2);
+                verificaHertzianamente(str, str2);
                 break;
         }
         fflush(stdin);
@@ -337,18 +345,77 @@ void verificaAnagramma(char *s, char *s2)
     int occ[128];
     int occ2[128];
     int *p, *p2, i, j;
+    char check = 128;
 
     for(i = 0; i < 128; i++)
-        output[i] = 0;
+        occ[i] = 0;
 
-    for(p = output; *s != '\0'; s++)
+    for(p = occ; *s != '\0'; s++)
     {
         *(p + *s) +=1;
     }
 
+    for(i = 0; i < 128; i++)
+        occ2[i] = 0;
+
+    for(p2 = occ2; *s2 != '\0'; s2++)
+    {
+        *(p2 + *s) +=1;
+    }
+
+    while(s++ == s2++);
+
+
+    if(*s != *s2)
+        printf("Non sono due anagrammi");
+    else
+        printf("Sono due anagrammi");
+
+
+
 }
 
-void verificaHertzianamente(char *s)
-{
+void verificaHertzianamente(char *s, char *s2) {
+    int l1 = 0, l2 = 0;
+    int i;
+    int heartz = TRUE;
 
+    for (; *(s + l1) != '\0'; l1++);
+    for (; *(s2 + l2) != '\0'; l2++);
+
+    if (l1 != l2)
+        printf("Le due stringhe non sono Heartziane");
+    else
+    {
+        heartz = TRUE;
+        i = 1;
+        while( (i < l1) && (heartz == TRUE))
+        {
+            if(*(s + i) != *(s2 + i))
+            {
+                printf("Le due stringhe non sono Heartziane");
+                heartz = FALSE;
+            }
+
+            i+=2;
+        }
+        if (heartz == FALSE)
+        {
+            heartz = TRUE;
+            i = 0;
+            while ((i < l1) && (heartz == TRUE))
+            {
+                if (*(s + i) != *(s2 + i))
+                {
+                    printf("Le due stringhe non sono Heartziane");
+                    heartz = FALSE;
+                }
+
+                i+=2;
+            }
+        }
+    }
+
+    if (heartz == TRUE)
+        printf("Le due stringhe sono Heartziane");
 }

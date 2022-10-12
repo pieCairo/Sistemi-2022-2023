@@ -43,19 +43,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2022.2.3\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2022.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\p.cairo.2224\Documents\GitHub\Sistemi_2022-2023\Laboratorio\Esercizi Laboratorio\Es9 Menu"
+CMAKE_SOURCE_DIR = "C:\Users\pietr\OneDrive\Documenti\GitHub\Sistemi_2022-2023\Laboratorio\Esercizi Laboratorio\Es9 Menu"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\p.cairo.2224\Documents\GitHub\Sistemi_2022-2023\Laboratorio\Esercizi Laboratorio\Es9 Menu\cmake-build-debug"
+CMAKE_BINARY_DIR = "C:\Users\pietr\OneDrive\Documenti\GitHub\Sistemi_2022-2023\Laboratorio\Esercizi Laboratorio\Es9 Menu\cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Es9_Menu_Gesione_Esercizi_da_5_a_8.dir/depend.make
@@ -71,16 +71,16 @@ include CMakeFiles/Es9_Menu_Gesione_Esercizi_da_5_a_8.dir/flags.make
 CMakeFiles/Es9_Menu_Gesione_Esercizi_da_5_a_8.dir/main.c.obj: CMakeFiles/Es9_Menu_Gesione_Esercizi_da_5_a_8.dir/flags.make
 CMakeFiles/Es9_Menu_Gesione_Esercizi_da_5_a_8.dir/main.c.obj: ../main.c
 CMakeFiles/Es9_Menu_Gesione_Esercizi_da_5_a_8.dir/main.c.obj: CMakeFiles/Es9_Menu_Gesione_Esercizi_da_5_a_8.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\p.cairo.2224\Documents\GitHub\Sistemi_2022-2023\Laboratorio\Esercizi Laboratorio\Es9 Menu\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Es9_Menu_Gesione_Esercizi_da_5_a_8.dir/main.c.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Es9_Menu_Gesione_Esercizi_da_5_a_8.dir/main.c.obj -MF CMakeFiles\Es9_Menu_Gesione_Esercizi_da_5_a_8.dir\main.c.obj.d -o CMakeFiles\Es9_Menu_Gesione_Esercizi_da_5_a_8.dir\main.c.obj -c "C:\Users\p.cairo.2224\Documents\GitHub\Sistemi_2022-2023\Laboratorio\Esercizi Laboratorio\Es9 Menu\main.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\pietr\OneDrive\Documenti\GitHub\Sistemi_2022-2023\Laboratorio\Esercizi Laboratorio\Es9 Menu\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Es9_Menu_Gesione_Esercizi_da_5_a_8.dir/main.c.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Es9_Menu_Gesione_Esercizi_da_5_a_8.dir/main.c.obj -MF CMakeFiles\Es9_Menu_Gesione_Esercizi_da_5_a_8.dir\main.c.obj.d -o CMakeFiles\Es9_Menu_Gesione_Esercizi_da_5_a_8.dir\main.c.obj -c "C:\Users\pietr\OneDrive\Documenti\GitHub\Sistemi_2022-2023\Laboratorio\Esercizi Laboratorio\Es9 Menu\main.c"
 
 CMakeFiles/Es9_Menu_Gesione_Esercizi_da_5_a_8.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Es9_Menu_Gesione_Esercizi_da_5_a_8.dir/main.c.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\p.cairo.2224\Documents\GitHub\Sistemi_2022-2023\Laboratorio\Esercizi Laboratorio\Es9 Menu\main.c" > CMakeFiles\Es9_Menu_Gesione_Esercizi_da_5_a_8.dir\main.c.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\pietr\OneDrive\Documenti\GitHub\Sistemi_2022-2023\Laboratorio\Esercizi Laboratorio\Es9 Menu\main.c" > CMakeFiles\Es9_Menu_Gesione_Esercizi_da_5_a_8.dir\main.c.i
 
 CMakeFiles/Es9_Menu_Gesione_Esercizi_da_5_a_8.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Es9_Menu_Gesione_Esercizi_da_5_a_8.dir/main.c.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\p.cairo.2224\Documents\GitHub\Sistemi_2022-2023\Laboratorio\Esercizi Laboratorio\Es9 Menu\main.c" -o CMakeFiles\Es9_Menu_Gesione_Esercizi_da_5_a_8.dir\main.c.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\pietr\OneDrive\Documenti\GitHub\Sistemi_2022-2023\Laboratorio\Esercizi Laboratorio\Es9 Menu\main.c" -o CMakeFiles\Es9_Menu_Gesione_Esercizi_da_5_a_8.dir\main.c.s
 
 # Object files for target Es9_Menu_Gesione_Esercizi_da_5_a_8
 Es9_Menu_Gesione_Esercizi_da_5_a_8_OBJECTS = \
@@ -94,7 +94,7 @@ Es9_Menu_Gesione_Esercizi_da_5_a_8.exe: CMakeFiles/Es9_Menu_Gesione_Esercizi_da_
 Es9_Menu_Gesione_Esercizi_da_5_a_8.exe: CMakeFiles/Es9_Menu_Gesione_Esercizi_da_5_a_8.dir/linklibs.rsp
 Es9_Menu_Gesione_Esercizi_da_5_a_8.exe: CMakeFiles/Es9_Menu_Gesione_Esercizi_da_5_a_8.dir/objects1.rsp
 Es9_Menu_Gesione_Esercizi_da_5_a_8.exe: CMakeFiles/Es9_Menu_Gesione_Esercizi_da_5_a_8.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\p.cairo.2224\Documents\GitHub\Sistemi_2022-2023\Laboratorio\Esercizi Laboratorio\Es9 Menu\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable Es9_Menu_Gesione_Esercizi_da_5_a_8.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\pietr\OneDrive\Documenti\GitHub\Sistemi_2022-2023\Laboratorio\Esercizi Laboratorio\Es9 Menu\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable Es9_Menu_Gesione_Esercizi_da_5_a_8.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Es9_Menu_Gesione_Esercizi_da_5_a_8.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -106,6 +106,6 @@ CMakeFiles/Es9_Menu_Gesione_Esercizi_da_5_a_8.dir/clean:
 .PHONY : CMakeFiles/Es9_Menu_Gesione_Esercizi_da_5_a_8.dir/clean
 
 CMakeFiles/Es9_Menu_Gesione_Esercizi_da_5_a_8.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\p.cairo.2224\Documents\GitHub\Sistemi_2022-2023\Laboratorio\Esercizi Laboratorio\Es9 Menu" "C:\Users\p.cairo.2224\Documents\GitHub\Sistemi_2022-2023\Laboratorio\Esercizi Laboratorio\Es9 Menu" "C:\Users\p.cairo.2224\Documents\GitHub\Sistemi_2022-2023\Laboratorio\Esercizi Laboratorio\Es9 Menu\cmake-build-debug" "C:\Users\p.cairo.2224\Documents\GitHub\Sistemi_2022-2023\Laboratorio\Esercizi Laboratorio\Es9 Menu\cmake-build-debug" "C:\Users\p.cairo.2224\Documents\GitHub\Sistemi_2022-2023\Laboratorio\Esercizi Laboratorio\Es9 Menu\cmake-build-debug\CMakeFiles\Es9_Menu_Gesione_Esercizi_da_5_a_8.dir\DependInfo.cmake" --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\pietr\OneDrive\Documenti\GitHub\Sistemi_2022-2023\Laboratorio\Esercizi Laboratorio\Es9 Menu" "C:\Users\pietr\OneDrive\Documenti\GitHub\Sistemi_2022-2023\Laboratorio\Esercizi Laboratorio\Es9 Menu" "C:\Users\pietr\OneDrive\Documenti\GitHub\Sistemi_2022-2023\Laboratorio\Esercizi Laboratorio\Es9 Menu\cmake-build-debug" "C:\Users\pietr\OneDrive\Documenti\GitHub\Sistemi_2022-2023\Laboratorio\Esercizi Laboratorio\Es9 Menu\cmake-build-debug" "C:\Users\pietr\OneDrive\Documenti\GitHub\Sistemi_2022-2023\Laboratorio\Esercizi Laboratorio\Es9 Menu\cmake-build-debug\CMakeFiles\Es9_Menu_Gesione_Esercizi_da_5_a_8.dir\DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/Es9_Menu_Gesione_Esercizi_da_5_a_8.dir/depend
 
