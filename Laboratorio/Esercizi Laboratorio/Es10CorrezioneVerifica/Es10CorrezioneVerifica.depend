@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1666250891 source:c:\users\p.cairo.2224\documents\github\sistemi_2022-2023\laboratorio\esercizi laboratorio\es10correzioneverifica\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<time.h>
+
