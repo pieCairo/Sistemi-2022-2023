@@ -12,6 +12,7 @@ void stampaVet(int *v1, int *len);
 int* copiaPari(int *v1, int *v2, int *len);
 
 int main() {
+    srand(time(NULL));
     int *i, *j;
     char *scelta;
     int *len;
@@ -95,6 +96,8 @@ int* copiaPari(int *v1, int *v2, int *len)
     v1 = (int*) calloc(*len ,sizeof(int));
     v2 = (int*) calloc(*len ,sizeof(int));
 
+    for(*i = 0; *i < *len; (*i) = *i + 1)
+        *v1 = rand() % 100 + 1;
 
     for(*i = 0, *j = 0; *i < *len; (*i) = *i + 1)
     {
