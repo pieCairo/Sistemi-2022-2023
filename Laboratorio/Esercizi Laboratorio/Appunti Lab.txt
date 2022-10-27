@@ -1,0 +1,57 @@
+i = (int*) malloc(sizeof(int));       //La malloc restituisce un area di memoria void*, quindi devo fare un casting al tipo della variabile che voglio;
+n = (int*) calloc(*len ,sizeof(int)); //La calloc restituisce un area di memoria void*, quindi devo fare un casting al tipo della variabile che voglio --> differenza con la
+				        malloc sta nel fatto che svuota tutte le celle inizializzate mettendoci valore 0;
+n = realloc(n, *len * sizeof(int));   //La realloc può allungare/restringere un vettore, basta inserire il puntatore alla prima cella del vettore e poi inserire la nuova
+				        lunghezza * dimensione del tipo di variabile --> non è necessario il cast;
+										     --> funziona solo su vettori già esistenti;
+free(vC) 			     //Svuota la memoria allocata dalla variabile specificata come parametro;
+
+
+vC = (char*)malloc(sizeof(char) * (*len)); //La malloc per un vettore --> moltiplico sizeof((tipo della variabile) * lunghezza del vettore);
+
+for(*i = 0; *i < *len; (*i) = *i + 1)  //For per scorrere con la i; --- *(vC+*i) //Accedere alle celle dei vettori nei for
+
+
+/* MENU SEMPLICE COI CHAR
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+typedef int bool;
+
+void menu(char *sc);
+
+
+int main() {
+    char *scelta;
+    scelta = (char*) calloc(1,sizeof(char));
+    do{
+        menu(scelta);
+    }
+    while((*scelta) != 'q' && (*scelta != 'Q'));
+
+    system("@cls || clear");
+    printf("Programma terminato ...");
+    return 0;
+}
+
+void menu(char *sc)
+{
+    system("@cls || clear");
+
+    printf("a. \n");
+    printf("b. \n");
+    printf("c. \n");
+    printf("d. \n");
+    printf("e. \n");
+    printf("f. \n");
+    printf("g. \n");
+    printf("h. \n");
+    printf("i. \n");
+    printf("q. ESCI \n");
+
+    printf("Scelta --> ");
+    scanf("%c", sc);
+
+
+} */

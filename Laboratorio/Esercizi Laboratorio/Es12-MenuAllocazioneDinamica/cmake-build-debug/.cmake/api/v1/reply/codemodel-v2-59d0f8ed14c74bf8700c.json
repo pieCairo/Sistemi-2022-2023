@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.23"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Es12_MenuAllocazioneDinamica",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Es12_MenuAllocazioneDinamica::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Es12_MenuAllocazioneDinamica-Debug-90c5a28d41e84800fd34.json",
+					"name" : "Es12_MenuAllocazioneDinamica",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/p.cairo.2224/Documents/GitHub/Sistemi_2022-2023/Laboratorio/Esercizi Laboratorio/Es12-MenuAllocazioneDinamica/cmake-build-debug",
+		"source" : "C:/Users/p.cairo.2224/Documents/GitHub/Sistemi_2022-2023/Laboratorio/Esercizi Laboratorio/Es12-MenuAllocazioneDinamica"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

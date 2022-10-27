@@ -1,0 +1,3 @@
+C:/Users/p.cairo.2224/Documents/GitHub/Sistemi_2022-2023/Laboratorio/Esercizi Laboratorio/Es11-Allocazione Dinamica/cmake-build-debug/CMakeFiles/Es11_Allocazione_Dinamica.dir
+C:/Users/p.cairo.2224/Documents/GitHub/Sistemi_2022-2023/Laboratorio/Esercizi Laboratorio/Es11-Allocazione Dinamica/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/p.cairo.2224/Documents/GitHub/Sistemi_2022-2023/Laboratorio/Esercizi Laboratorio/Es11-Allocazione Dinamica/cmake-build-debug/CMakeFiles/rebuild_cache.dir
