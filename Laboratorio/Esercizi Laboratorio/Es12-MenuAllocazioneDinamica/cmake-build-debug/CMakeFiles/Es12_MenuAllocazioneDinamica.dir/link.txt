@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2022.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\Es12_MenuAllocazioneDinamica.dir/objects.a
+C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\ar.exe qc CMakeFiles\Es12_MenuAllocazioneDinamica.dir/objects.a @CMakeFiles\Es12_MenuAllocazioneDinamica.dir\objects1.rsp
+C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\Es12_MenuAllocazioneDinamica.dir/objects.a -Wl,--no-whole-archive -o Es12_MenuAllocazioneDinamica.exe -Wl,--out-implib,libEs12_MenuAllocazioneDinamica.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Es12_MenuAllocazioneDinamica.dir\linklibs.rsp
