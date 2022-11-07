@@ -7,19 +7,34 @@
 
 void menu(char *sc);
 
-void caricaVet(int *v1, int *len);
-void stampaVet(int *v1, int *len);
+void caricaVet(int *v1, int *len)
+{
+    int *i;
+
+    i = (int*) calloc(1, sizeof(int));
+    for(*i = 0; *i < *len; (*i)++)
+        *(v1 + (*i)) = 1 + rand() % 10;
+}
+void stampaVet(int *v1, int *len)
+{
+    int *i;
+
+    i = (int*) calloc(1, sizeof(int));
+    for(*i = 0; *i < *len; (*i)++)
+        printf("\nCella %d: %d", *i, *(v1 + (*i)));
+}
 
 int* copiaPari(int *v1, int *v2, int *len);
 void invertiStringa(char *s);
 void concatenaStringa(char *s, char *s2);
+void spostaNonDoppioni(char *s, char *s2);
 
 int main() {
 
     srand(time(NULL));
 
-    int *len1;
-    int *len2;
+    int *lenv1, *lenv2;
+
     char *str;
     char *str2;
     int *i;
@@ -36,19 +51,29 @@ int main() {
         {
             case 'a':
             case 'A':
+                getchar();
+
+                lenv1 = (int*) malloc(sizeof(int));
+
+                do{
+                    printf("Inserisci dimensione vettore -> ");
+                    scanf("%d", lenv1);
+                }while((*lenv1 <= 0));
                 fflush(stdin);
-                printf("Inserisci la dimensione del vettore: ");
-                scanf("%d", len);
-
-                v1 = (int*) calloc(*len ,sizeof(int));
-                v2 = (int*) calloc(*len ,sizeof(int));
-                i = (int*)calloc(1, sizeof(int));
-                j = (int*)calloc(1, sizeof(int));
-
-
-                j = copiaPari(v1, v2, len);
-                for(*i = 0; *i < *j; (*i) = *i + 1)
-                    printf("Cella n.%d = %d", *i+1, *(v2+*i));
+                v1 = (int*) malloc(sizeof(int) * (*lenv1));
+                v2 = (int*) malloc(sizeof(int) * (*lenv1));
+                printf("Stampa vettore 1\n");
+                caricaVet(v1, lenv1);
+                stampaVet(v1, lenv1);
+                //v1 = (int*) calloc(*lenv1, sizeof(int));
+                lenv2 = copiaPari(v1, v2, lenv1);
+                printf("\n\nStampa vettore v2");
+                stampaVet(v2, lenv2);
+                free(v1);
+                free(v2);
+                free(lenv1);
+                free(lenv2);
+                getchar();
                 break;
             case 'b':
             case 'B':
@@ -84,12 +109,23 @@ int main() {
                 free(str2);
 
                 fflush(stdin);
-
                 break;
             case 'd':
             case 'D':
                 fflush(stdin);
+                str = (char*) calloc(MAX, sizeof(char));
+                str2 = (char*) calloc(MAX, sizeof(char));
 
+                printf("Inserisci la stringa: ");
+                gets(str);
+
+                spostaNonDoppioni(str, str2);
+
+                printf("\nStringa senza doppioni: %s", str2);
+                free(str);
+                free(str2);
+
+                fflush(stdin);
                 break;
             case 'e':
             case 'E':
@@ -119,7 +155,7 @@ void menu(char *sc)
     printf("a. Dato un vettore di interi casuali caricare in v2 solo i valori pari \n");
     printf("b. Inverti il contenuto di una stringa\n");
     printf("c. Concatena una stringa\n");
-    printf("d. \n");
+    printf("d. Sposta in stringa s2 solo caratteri che non si ripetono in s1\n");
     printf("e. \n");
     printf("f. \n");
     printf("g. \n");
@@ -137,39 +173,21 @@ int* copiaPari(int *v1, int *v2, int *len)
 {
     int *i, *j;
 
-    caricaVet(v1, len);
+    i = (int*) malloc(sizeof(int));
+    j = (int*) malloc(sizeof(int));
 
     for(*i = 0, *j = 0; *i < *len; (*i) = *i + 1)
     {
-        if(*(v1+*i) % 2 == 0)
+        if(*(v1+ (*i)) % 2 == 0)
         {
-            *(v2 + *j) = *(v1+*i);
+            *(v2 + (*j)) = *(v1+ (*i));
             *j = *j + 1;
         }
     }
 
     v2 = realloc(v2, (*j) * sizeof(int));
-    return *j;
+    return j;
 }
-
-
-void caricaVet(int *v1, int *len)
-{
-    int *i;
-
-    i = (int*) calloc(1, sizeof(int));
-    for(*i = 0; *i < *len; (*i)++)
-        *(v1 + (*i)) = 1 + rand() % 10;
-}
-void stampaVet(int *v1, int *len)
-{
-    int *i;
-
-    i = (int*) calloc(1, sizeof(int));
-    for(*i = 0; *i < *len; (*i)++)
-        printf("Cella %d: %d", *i, *(v1 + (*i)));
-}
-
 void invertiStringa(char *s)
 {
     char *aus, *pF;
@@ -189,22 +207,47 @@ void invertiStringa(char *s)
 
 
 }
-
 void concatenaStringa(char *s, char *s2)
 {
-    char *aus, *pF;
-    int *i;
-    char *p;
+    int len1 = strlen(s);
 
-    i = (int*) calloc(1, sizeof(int));
-    s2 = (char*) realloc(s, ( (strlen(s2)+1) * sizeof(char)));
-    aus = (char*) calloc(1, sizeof(char));
+    s = (char*) realloc(s, ( (strlen(s) + strlen(s2) + 1) * sizeof(char)));
 
-    *p = strlen(s) + 1;
+    s = s+len1;
 
-    for(; p2 < (s2 + strlen(s2)); p2++)
+    while(*s2 != '\0')
     {
-        *p = *p2;
-
+        *s = *s2;
+        s++;
+        s2++;
     }
+
+    *s = '\0';
+
+}
+
+void spostaNonDoppioni(char *s, char *s2)
+{
+    s = (char*) realloc(s, ( (strlen(s) + strlen(s2) + 1) * sizeof(char)));
+    char aus;
+
+    char *p, *sc;
+    p = s;
+
+    for(; *p != '\0'; p++)
+    {
+        aus = *p;
+
+        sc = p;
+        while(*sc != aus && *sc != '\0')
+            sc++;
+
+        if(*sc == '\0')
+        {
+            *s2 = *p;
+            s2++;
+        }
+    }
+
+
 }
