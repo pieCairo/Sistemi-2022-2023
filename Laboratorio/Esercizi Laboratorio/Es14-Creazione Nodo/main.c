@@ -146,21 +146,23 @@ Dipendenti *addByPos(Dipendenti *testa, int pos)
     nodo = nuovoDipendente();
 
     Dipendenti *pt = testa;
+    Dipendenti *pt2;
+
     int cont2 = 0;
     int cont = contaNodi(testa);
 
     if(pos > cont)
         testa = addOnTail(testa, nodo);
-    else if(pos == 0)
+    else if(pos < 0)
         testa = addOnHead(testa, nodo);
     else
     {
-        while(cont2 != pos - 2)
+        while(cont2 != pos - 1)
         {
             cont2++;
             pt = pt->next;
         }
-        Dipendenti *pt2 = pt;
+        pt2 = pt;
         pt2 = pt2 ->next;
 
         nodo->next = pt2;
