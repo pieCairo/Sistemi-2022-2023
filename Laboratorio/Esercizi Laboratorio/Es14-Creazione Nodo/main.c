@@ -10,6 +10,7 @@ typedef struct dipendente {
     char cognome[MAX];
     int eta;
     struct dipendente *next;
+
 } Dipendenti;
 
 Dipendenti* nuovoDipendente();
@@ -37,7 +38,6 @@ int main()
     testa = addOnTail(testa, nodo);
     nodo = nuovoDipendente();
     testa = addOnHead(testa, nodo);
-
     nodo = nuovoDipendente();
     testa = addOnTail(testa, nodo);
 
@@ -50,7 +50,7 @@ int main()
     printf("Inserisci la posizione del nodo da aggiungere: ");
     scanf("%d", &pos);
 
-    newPos = addByPos(testa, pos);
+    testa = addByPos(testa, pos);
     showList(testa);
 
     return 0;
@@ -108,7 +108,7 @@ Dipendenti* nuovoDipendente()
     // INSERIMENTO ETA
     eta = 18 + rand() % (65 - 18);
 
-    pDip = (Dipendenti*) malloc(sizeof(Dipendenti));
+    pDip = (Dipendenti*)calloc(1, sizeof(Dipendenti));
 
     strcpy(pDip->matricola, matr);
     strcpy(pDip->cognome, cogn);
@@ -122,13 +122,20 @@ Dipendenti* nuovoDipendente()
 void showList(Dipendenti* testa)
 {
     Dipendenti *pt = testa;
-    while (pt != NULL) {
-        printf("%d - %s - %d\n", pt->matricola, pt->cognome, pt->eta);
-        pt = pt->next;
+    if(pt == NULL)
+        printf("La lista \212 vuota");
+    else
+    {
+        while (pt != NULL)
+        {
+            printf("%d\t%s\t%d\n", pt->matricola, pt->cognome, pt->eta);
+            pt = pt->next;
+        }
     }
 }
 
-int contaNodi(Dipendenti *testa) {
+int contaNodi(Dipendenti *testa)
+{
     Dipendenti *pt = testa;
     int cont = 0;
 
@@ -144,16 +151,13 @@ Dipendenti *addByPos(Dipendenti *testa, int pos)
 {
     Dipendenti *nodo;
     nodo = nuovoDipendente();
-
     Dipendenti *pt = testa;
-    Dipendenti *pt2;
 
-    int cont2 = 0;
-    int cont = contaNodi(testa);
+    int cont2 = 1;
 
-    if(pos > cont)
+    if(pos > contaNodi(testa))
         testa = addOnTail(testa, nodo);
-    else if(pos < 0)
+    else if(pos <= 1)
         testa = addOnHead(testa, nodo);
     else
     {
@@ -162,10 +166,7 @@ Dipendenti *addByPos(Dipendenti *testa, int pos)
             cont2++;
             pt = pt->next;
         }
-        pt2 = pt;
-        pt2 = pt2 ->next;
-
-        nodo->next = pt2;
+        nodo->next = pt->next;
         pt->next = nodo;
 
     }
