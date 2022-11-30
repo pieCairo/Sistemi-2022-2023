@@ -1,0 +1,19 @@
+Cablaggio in rame 
+VANTAGGI 
+meno costoso
+
+
+SVANTAGGI
+
+interferenze ai segnali elettromagnetici
+interferenze radio                SOLUZIONE cavi schermati {usando fogli di alluminio/calza metallica}
+crosstalk/diafonia {stessa cosa}  SOLUZIONE intrecciare i fili
+
+Tipi di fili:
+Coaxial cable {devono essere ignifughe} 10Mbit/sec {cavo sottile} 100Mbit/sec {cavo spesso} {usato negli USA per le comunicazioni nelle metro e usati per la trasmissione televisiva}
+UTP {unshielded twisted/pair} {cavo che si usa attualmente} 4 coppie di fili intrecciate tra di loro {per evitare il CROSSTALK}
+STP {shielded twisted/pair} {si coprono le coppie di fili con un foglio di alluminio} [{costa piu del UTP}{il cablaggio e piu difficile}{anche i connettori ai fili dovrebbero essere schermati}] 
+
+CAVO STRAIGHT/TROUGH {cavo diretto} server per collegare due dispositivi diversi {devo cablare i fili allo stesso modo}
+CAVO CROSSOVER serve per collegare due dispositivi uguali {pc e pc, switch e switch} {se devo collegare una scheda di rete con la porta di un router} 
+CAVO ROLLOVER serve per collegare la scheda di rete di un pc alla porta di ingresso di un router {proprietario cisco} {cablaggio come lo STRAIGHT/TROUGH ma le mollette le inverto, una in su e una in giu}
