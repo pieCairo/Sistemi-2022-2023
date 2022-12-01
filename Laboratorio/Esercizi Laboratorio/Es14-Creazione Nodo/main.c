@@ -20,17 +20,28 @@ Dipendenti *addOnTail(Dipendenti *testa, Dipendenti *nodo);
 int contaNodi(Dipendenti *testa);
 void showList(Dipendenti *testa);
 Dipendenti *addByPos(Dipendenti *testa, int pos);
+Dipendenti *delByPos(Dipendenti *testa, int pos);
+Dipendenti *addOrdinato(Dipendenti  *testa);
+void sortByCogn(Dipendenti *testa);
 
 
 int main()
 {
     Dipendenti *nodo;
 
+
     Dipendenti *testa = NULL;
     Dipendenti *newPos = NULL;
     int pos = 0;
 
     srand(time(NULL));
+
+    /*
+    int i;
+    for(i=0; i < 5; i++)
+    {
+        testa = addOrdinato(testa);
+    } */
 
     nodo = nuovoDipendente();
     testa = addOnHead(testa, nodo);
@@ -51,6 +62,16 @@ int main()
     scanf("%d", &pos);
 
     testa = addByPos(testa, pos);
+    showList(testa);
+
+    printf("Inserisci la posizione del nodo da eliminare: ");
+    scanf("%d", &pos);
+
+    testa = delByPos(testa, pos);
+    showList(testa);
+
+
+    sortByCogn(testa);
     showList(testa);
 
     return 0;
@@ -173,3 +194,142 @@ Dipendenti *addByPos(Dipendenti *testa, int pos)
 
     return testa;
 }
+
+
+Dipendenti *delByPos(Dipendenti *testa, int pos)
+{
+    Dipendenti *pt = testa;
+    Dipendenti *pt2;
+
+    int cont2 = 1;
+
+    if(pos > contaNodi(testa))
+    {
+        while(cont2 != contaNodi(testa) - 1)
+        {
+            cont2++;
+            pt = pt->next;
+        }
+        pt2 = pt->next;
+        pt->next = NULL;
+        free(pt2);
+    }
+    else if(pos <= 1)
+    {
+        testa = testa->next;
+        free(pt);
+    }
+    else
+    {
+        while(cont2 != pos - 1)
+        {
+            cont2++;
+            pt = pt->next;
+        }
+        pt2 = pt->next;
+        pt->next = pt2->next;
+        free(pt2);
+
+    }
+
+    return testa;
+}
+
+Dipendenti *addOrdinato(Dipendenti  *testa)
+{
+    Dipendenti *nodo;
+    nodo = nuovoDipendente();
+    int nEsecuz = 0;
+
+    Dipendenti *pt = testa;
+
+/*  if(testa == NULL)
+        testa = nodo;
+    else
+    {
+        while(strcmp(pt->cognome, nodo->cognome) > 0)
+        {
+            pt = pt->next;
+            nEsecuz++;
+        }
+
+        if(nEsecuz == 0)
+        {
+            testa = addOnHead(testa, nodo);
+        }
+        else if(pt->next == NULL)
+            pt->next = nodo;
+        else
+        {
+            nodo->next = pt->next;
+            pt->next = nodo;
+        }
+    }
+    if(testa == NULL)
+        testa = nodo;
+    else
+    {
+        if(strcmp(testa->cognome, nodo->cognome) > 0
+        {
+            nodo->next = testa;
+            testa = nodo;
+        }
+        else
+        {
+            pt = testa;
+            Dipendenti *pLista = testa -> next;
+
+            while(pLista != NULL && strcmp(nodo->cognome, pLista->cognome) > 0)
+            {
+                pt = pLista;
+                pLista = pLista->next;
+            }
+
+
+        }
+    }
+
+    printf("Nodo aggiunto!\n");
+
+    return testa; */
+}
+
+void sortByCogn(Dipendenti *testa)
+{
+    int i, j;
+    int rifare = 1;
+    char aus[MAX];
+    int ausEta;
+
+    Dipendenti *l1 = NULL;
+    Dipendenti *l2 = NULL;
+
+    while(rifare == 1)
+    {
+        rifare = 0;
+        for(l1 = testa; l1->next != NULL; l1 = l1->next)
+        {
+            for(l2 = l1 -> next; l2 != NULL; l2 = l2->next)
+            {
+                if(strcmp(l1->cognome, l2->cognome) > 0)
+                {
+                    rifare = 1;
+                    strcpy(aus, l1->matricola);
+                    strcpy(l1->matricola, l2->matricola);
+                    strcpy(l2->matrica, aus);
+
+                    strcpy(aus, l1->cognome);
+                    strcpy(l1->cognome, l2->cognome);
+                    strcpy(l2->cognome, aus);
+
+                    ausEta = l1->eta;
+                    l1->eta = l2->eta;
+                    l2->eta = aus;
+                }
+            }
+        }
+    }
+
+    printf("Ordinamento completato");
+}
+
